@@ -4,7 +4,7 @@ Plugin Name: FacetWP - Infinite Scroll
 Plugin URI: https://github.com/nickdavis/facetwp-infinite-scroll
 Description: Adds infinite scroll functionality to FacetWP templates. Requires developer config.
 Author: Nick Davis
-Version: 1.0.0
+Version: 1.1.0
 Author URI: https://nickdavis.net
 */
 
@@ -29,19 +29,30 @@ function constants() {
 		$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 	}
 
-	define( 'ND_FACETWP_INFINITE_SCROLL_VERSION', '1.0.0' );
 	define( 'ND_FACETWP_INFINITE_SCROLL_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 	define( 'ND_FACETWP_INFINITE_SCROLL_URL', $plugin_url );
 	define( 'ND_FACETWP_INFINITE_SCROLL_FILE', __FILE__ );
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_facetwp_infinite_scroll_script' );
-function enqueue_facetwp_infinite_scroll_script(): void {
-	$js_path    = '/js/facetwp-infinite-scroll.js';
-	$js_uri     = get_stylesheet_directory_uri() . $js_path;
-	$js_version = filemtime( get_stylesheet_directory() . $js_path );
+add_filter( 'facetwp_facets', __NAMESPACE__ . '\register_load_more_facet' );
+/**
+ * Register the Load More facet with FacetWP.
+ *
+ * @param array $facets
+ *
+ * @return array
+ */
+function register_load_more_facet( array $facets ): array {
+	$facets[] = [
+		'label'          => 'Load More',
+		'name'           => 'load_more',
+		'type'           => 'pager',
+		'pager_type'     => 'load_more',
+		'load_more_text' => 'Load More',
+		'loading_text'   => 'Loading...',
+	];
 
-	wp_enqueue_script( 'facetwp-infinite-scroll', $js_uri, [ 'jquery' ], $js_version, true );
+	return $facets;
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_script' );
