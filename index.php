@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: FacetWP - Infinite Scroll
-Plugin URI: https://github.com/nickdavis/five9-modal
+Plugin URI: https://github.com/nickdavis/facetwp-infinite-scroll
 Description: Adds infinite scroll functionality to FacetWP templates. Requires developer config.
 Author: Nick Davis
 Version: 1.0.0
