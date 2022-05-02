@@ -65,7 +65,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_styles' );
  * @return void
  */
 function enqueue_styles(): void {
-	$css_path    = '/css/five9-modal.css';
+	$css_path    = '/css/facetwp-infinite-scroll.css';
 	$css_uri     = ND_FACETWP_INFINITE_SCROLL_URL . $css_path;
 	$css_version = filemtime( ND_FACETWP_INFINITE_SCROLL_DIR . $css_path );
 
