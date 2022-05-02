@@ -1,0 +1,13 @@
+{
+  "name": "nickdavis/facetwp-infinite-scroll",
+  "description": "WordPress plugin which adds infinite scroll functionality to FacetWP templates. Requires developer config.",
+  "type": "wordpress-plugin",
+  "version": "1.0.0",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nick Davis"
+    }
+  ]
+}
