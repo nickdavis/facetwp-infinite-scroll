@@ -1,5 +1,5 @@
 jQuery(function ($) {
-	var intBottomMargin = 400; // Pixels from bottom when script should trigger
+	var intBottomMargin = 1200; // Pixels from bottom when script should trigger
 	setInterval(() => {
 		if (($(window).scrollTop() >= $(document).height() - $(window).height() - intBottomMargin)
 			&& (!$(".facetwp-load-more").hasClass("loading"))
