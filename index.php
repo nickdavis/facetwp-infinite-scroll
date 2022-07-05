@@ -4,7 +4,7 @@ Plugin Name: FacetWP - Infinite Scroll
 Plugin URI: https://github.com/nickdavis/facetwp-infinite-scroll
 Description: Adds infinite scroll functionality to FacetWP templates. Requires developer config.
 Author: Nick Davis
-Version: 1.1.0
+Version: 1.2.0
 Author URI: https://nickdavis.net
 */
 
